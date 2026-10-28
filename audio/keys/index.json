@@ -1,0 +1,355 @@
+{
+ "source": "OpenGameArt 'Keyboard Soundpack #1' by unicaegames (CC0)",
+ "sounds": {
+  "key_01": {
+   "name": "key_01",
+   "file": "key_01.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 3.0,
+   "loop": false,
+   "description": "recorded keypress (source #001)"
+  },
+  "key_02": {
+   "name": "key_02",
+   "file": "key_02.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.37,
+   "loop": false,
+   "description": "recorded keypress (source #002)"
+  },
+  "key_03": {
+   "name": "key_03",
+   "file": "key_03.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.61,
+   "loop": false,
+   "description": "recorded keypress (source #003)"
+  },
+  "key_04": {
+   "name": "key_04",
+   "file": "key_04.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 3.0,
+   "loop": false,
+   "description": "recorded keypress (source #004)"
+  },
+  "key_05": {
+   "name": "key_05",
+   "file": "key_05.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.34,
+   "loop": false,
+   "description": "recorded keypress (source #005)"
+  },
+  "key_06": {
+   "name": "key_06",
+   "file": "key_06.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 3.0,
+   "loop": false,
+   "description": "recorded keypress (source #006)"
+  },
+  "key_07": {
+   "name": "key_07",
+   "file": "key_07.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 1.26,
+   "loop": false,
+   "description": "recorded keypress (source #007)"
+  },
+  "key_08": {
+   "name": "key_08",
+   "file": "key_08.wav",
+   "kind": "oneshot",
+   "duration": 0.277,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.0,
+   "loop": false,
+   "description": "recorded keypress (source #008)"
+  },
+  "key_09": {
+   "name": "key_09",
+   "file": "key_09.wav",
+   "kind": "oneshot",
+   "duration": 0.276,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.87,
+   "loop": false,
+   "description": "recorded keypress (source #010)"
+  },
+  "key_10": {
+   "name": "key_10",
+   "file": "key_10.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.17,
+   "loop": false,
+   "description": "recorded keypress (source #011)"
+  },
+  "key_11": {
+   "name": "key_11",
+   "file": "key_11.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.58,
+   "loop": false,
+   "description": "recorded keypress (source #012)"
+  },
+  "key_12": {
+   "name": "key_12",
+   "file": "key_12.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 2.66,
+   "loop": false,
+   "description": "recorded keypress (source #013)"
+  },
+  "key_13": {
+   "name": "key_13",
+   "file": "key_13.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.35,
+   "loop": false,
+   "description": "recorded keypress (source #014)"
+  },
+  "key_14": {
+   "name": "key_14",
+   "file": "key_14.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.42,
+   "loop": false,
+   "description": "recorded keypress (source #015)"
+  },
+  "key_15": {
+   "name": "key_15",
+   "file": "key_15.wav",
+   "kind": "oneshot",
+   "duration": 0.263,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.52,
+   "loop": false,
+   "description": "recorded keypress (source #016)"
+  },
+  "key_16": {
+   "name": "key_16",
+   "file": "key_16.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 3.0,
+   "loop": false,
+   "description": "recorded keypress (source #017)"
+  },
+  "key_17": {
+   "name": "key_17",
+   "file": "key_17.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.29,
+   "loop": false,
+   "description": "recorded keypress (source #018)"
+  },
+  "key_18": {
+   "name": "key_18",
+   "file": "key_18.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 2.95,
+   "loop": false,
+   "description": "recorded keypress (source #019)"
+  },
+  "key_19": {
+   "name": "key_19",
+   "file": "key_19.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.55,
+   "loop": false,
+   "description": "recorded keypress (source #021)"
+  },
+  "key_20": {
+   "name": "key_20",
+   "file": "key_20.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.65,
+   "loop": false,
+   "description": "recorded keypress (source #022)"
+  },
+  "key_21": {
+   "name": "key_21",
+   "file": "key_21.wav",
+   "kind": "oneshot",
+   "duration": 0.265,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.1,
+   "loop": false,
+   "description": "recorded keypress (source #023)"
+  },
+  "key_22": {
+   "name": "key_22",
+   "file": "key_22.wav",
+   "kind": "oneshot",
+   "duration": 0.269,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.22,
+   "loop": false,
+   "description": "recorded keypress (source #024)"
+  },
+  "key_23": {
+   "name": "key_23",
+   "file": "key_23.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.97,
+   "loop": false,
+   "description": "recorded keypress (source #025)"
+  },
+  "key_24": {
+   "name": "key_24",
+   "file": "key_24.wav",
+   "kind": "oneshot",
+   "duration": 0.274,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.4,
+   "loop": false,
+   "description": "recorded keypress (source #026)"
+  },
+  "key_25": {
+   "name": "key_25",
+   "file": "key_25.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 1.23,
+   "loop": false,
+   "description": "recorded keypress (source #027)"
+  },
+  "key_26": {
+   "name": "key_26",
+   "file": "key_26.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.86,
+   "loop": false,
+   "description": "recorded keypress (source #028)"
+  },
+  "key_27": {
+   "name": "key_27",
+   "file": "key_27.wav",
+   "kind": "oneshot",
+   "duration": 0.276,
+   "peak_time": 0.0,
+   "gain_hint_db": 1.71,
+   "loop": false,
+   "description": "recorded keypress (source #029)"
+  },
+  "key_28": {
+   "name": "key_28",
+   "file": "key_28.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": 3.0,
+   "loop": false,
+   "description": "recorded keypress (source #030)"
+  },
+  "key_29": {
+   "name": "key_29",
+   "file": "key_29.wav",
+   "kind": "oneshot",
+   "duration": 0.28,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.63,
+   "loop": false,
+   "description": "recorded keypress (source #031)"
+  },
+  "key_30": {
+   "name": "key_30",
+   "file": "key_30.wav",
+   "kind": "oneshot",
+   "duration": 0.274,
+   "peak_time": 0.0,
+   "gain_hint_db": -0.06,
+   "loop": false,
+   "description": "recorded keypress (source #032)"
+  },
+  "key_space_01": {
+   "name": "key_space_01",
+   "file": "key_space_01.wav",
+   "kind": "oneshot",
+   "duration": 0.291,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.0,
+   "loop": false,
+   "description": "spacebar, derived from source #004"
+  },
+  "key_space_02": {
+   "name": "key_space_02",
+   "file": "key_space_02.wav",
+   "kind": "oneshot",
+   "duration": 0.295,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.0,
+   "loop": false,
+   "description": "spacebar, derived from source #006"
+  },
+  "key_space_03": {
+   "name": "key_space_03",
+   "file": "key_space_03.wav",
+   "kind": "oneshot",
+   "duration": 0.284,
+   "peak_time": 0.0,
+   "gain_hint_db": -1.0,
+   "loop": false,
+   "description": "spacebar, derived from source #030"
+  },
+  "key_enter_01": {
+   "name": "key_enter_01",
+   "file": "key_enter_01.wav",
+   "kind": "oneshot",
+   "duration": 0.311,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.0,
+   "loop": false,
+   "description": "enter key, derived from source #007"
+  },
+  "key_enter_02": {
+   "name": "key_enter_02",
+   "file": "key_enter_02.wav",
+   "kind": "oneshot",
+   "duration": 0.307,
+   "peak_time": 0.0,
+   "gain_hint_db": 0.0,
+   "loop": false,
+   "description": "enter key, derived from source #017"
+  }
+ }
+}
