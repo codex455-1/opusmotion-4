@@ -1,0 +1,26 @@
+{
+ "L01": {
+  "speed": 0.94,
+  "utmos": 4.445,
+  "dur": 6.6,
+  "text": "In 1992, an old man walked into a British embassy... with a scruffy bag of sausages."
+ },
+ "L02": {
+  "speed": 0.98,
+  "utmos": 4.435,
+  "dur": 3.375,
+  "text": "Under the meat, were the secrets of the KGB."
+ },
+ "L03": {
+  "speed": 1.0,
+  "utmos": 4.36,
+  "dur": 3.55,
+  "text": "[Vasili](/v\u0259s\u02c8i\u02d0li/) [Mitrokhin](/m\u026at\u0279\u02c8\u0252k\u026an/). A KGB archivist."
+ },
+ "L04": {
+  "speed": 0.94,
+  "utmos": 4.459,
+  "dur": 8.25,
+  "text": "In 1972, he was put in charge of moving the KGB's spy archive, to a new headquarters outside Moscow."
+ }
+}
