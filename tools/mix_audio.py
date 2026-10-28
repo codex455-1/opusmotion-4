@@ -17,10 +17,17 @@ from scenes.common import CUES  # noqa: E402
 SR = 48000
 N = int(round((TL.DURATION + 0.2) * SR))
 IDX = json.loads((ROOT / "audio/sfx/index.json").read_text())["sounds"]
+# typing uses real recorded keystrokes (audio/keys, CC0), not the synthetic thocks
+KEYS = json.loads((ROOT / "audio/keys/index.json").read_text())["sounds"]
+for _k, _v in KEYS.items():
+    IDX[_k] = dict(_v, file="../keys/" + _v["file"])
+N_KEYS = sum(1 for k in KEYS if k[4:].isdigit())
+KEY_MIN_GAP = 0.085      # ~11 keystrokes/s ceiling: brisk human typing, never a buzz
 _cache = {}
 
-# category trims (dB) applied on top of each cue's gain, tuned by measuring the mix balance
-TRIM = {"key": -5.0, "text": -2.0, "amb": 2.0, "impact": 0.0, "move": -1.0, "obj": -1.0}
+TRIM = {"key": 0.0, "text": 0.0, "amb": 0.0, "impact": 0.0, "move": 0.0, "obj": 0.0}
+# each SFX bus is set to a fixed loudness relative to the narration (LU), so the voice always leads
+BUS_TARGET = {"key": -14.0, "text": -18.0, "amb": -18.0, "move": -11.0, "obj": -10.0, "impact": -8.0}
 CAT = {"key_thock": "key", "key_space": "key", "key_enter": "key", "text_pop": "text", "text_soft": "text",
        "room_archive": "amb", "room_london_night": "amb", "wind_soft": "amb", "train_loop": "amb", "boat_loop": "amb",
        "steam": "amb", "route_draw": "amb", "pen_write": "amb", "clock_tick": "amb",
@@ -29,6 +36,8 @@ CAT = {"key_thock": "key", "key_space": "key", "key_enter": "key", "text_pop": "
 
 
 def resolve(name, var):
+    if name == "key_thock":
+        return f"key_{var % N_KEYS + 1:02d}"
     for cand in (f"{name}_{var + 1:02d}", name, f"{name}_loop", f"{name}_01"):
         if cand in IDX:
             return cand
@@ -68,6 +77,16 @@ def build_sfx():
         else:
             cues.append(dict(t=t, name="text_soft", gain=-13.0 if kind == "row_key" else -16.0, pan=0.0,
                              var=int(t * 11) % 6))
+    kept, last_key = [], -1.0
+    for cu in sorted(cues, key=lambda c: c["t"]):
+        if cu["name"].startswith("key_"):
+            h = ((int(cu["t"] * 1000) * 2654435761) % 1000) / 1000.0
+            if cu["t"] - last_key < KEY_MIN_GAP * (0.85 + 0.3 * h):
+                continue
+            last_key = cu["t"]
+            cu = dict(cu, var=int(h * 997), gain=cu["gain"] + (h - 0.5) * 3.0)
+        kept.append(cu)
+    cues = kept
     for cu in cues:
         key = resolve(cu["name"], cu.get("var", 0))
         info = IDX[key]
@@ -84,9 +103,8 @@ def build_sfx():
         else:
             y = x
             if cat == "key":
-                # neighbouring thock variants correlate (~0.86); a per-keystroke ±4% pitch/speed shift
-                # keeps long typing runs from sounding machine-gunned
-                r = 1.0 + (((int(cu["t"] * 1000) * 2654435761) % 1000) / 1000.0 - 0.5) * 0.08
+                # small per-keystroke pitch/speed shift (±2%) so repeated samples never sound identical
+                r = 1.0 + (((int(cu["t"] * 1000) * 2654435761) % 1000) / 1000.0 - 0.5) * 0.04
                 src = np.arange(len(x), dtype=np.float64)
                 dst = np.arange(0, len(x) - 1, r)
                 y = np.stack([np.interp(dst, src, x[:, ch]) for ch in range(x.shape[1])], 1).astype(np.float32)
@@ -156,8 +174,14 @@ def limiter(x, ceiling_db=-1.2, look=0.004, release=0.08):
 
 
 def main():
+    import pyloudnorm as pyln
+    meter = pyln.Meter(SR)
     vo = voice()
     buses, ncues = build_sfx()
+    Lvo = meter.integrated_loudness(vo)
+    for k, b in buses.items():
+        if np.abs(b).max() > 1e-6:
+            buses[k] = b * 10 ** ((Lvo + BUS_TARGET[k] - meter.integrated_loudness(b)) / 20)
     sfx = sum(buses.values())
     # sidechain ducking of SFX under the voice (impacts barely ducked)
     env = X.rms_envelope(vo[:, 0], 0.05)[:N]
@@ -173,8 +197,6 @@ def main():
     duck_imp = 10 ** (-2.0 * sm / 20)
     sfx_d = (sfx - buses["impact"]) * duck[:, None] + buses["impact"] * duck_imp[:, None]
     mix = vo + sfx_d
-    import pyloudnorm as pyln
-    meter = pyln.Meter(SR)
     for _ in range(3):
         L = meter.integrated_loudness(mix)
         mix = mix * 10 ** ((-14.0 - L) / 20)
@@ -188,10 +210,9 @@ def main():
     for k, b in buses.items():
         sf.write(ROOT / f"build/stem_{k}.wav", b.astype(np.float32), SR, subtype="FLOAT")
     sf.write(ROOT / "build/stem_vo.wav", vo.astype(np.float32), SR, subtype="FLOAT")
-    lv = {k: round(meter.integrated_loudness(b * 10 ** ((-14.0 - L) / 20)), 1) if np.abs(b).max() > 1e-6 else None
-          for k, b in buses.items()}
+    lv = {k: round(meter.integrated_loudness(b) - Lvo, 1) if np.abs(b).max() > 1e-6 else None for k, b in buses.items()}
     print(f"cues={ncues} integrated={L:.2f} LUFS truepeak~{tp:.2f} dBTP duration={len(mix) / SR:.2f}s")
-    print("bus loudness (LUFS, pre-duck, at master gain):", lv, "voice:", round(meter.integrated_loudness(vo), 1))
+    print("bus loudness relative to voice (LU, pre-duck):", lv)
 
 
 if __name__ == "__main__":

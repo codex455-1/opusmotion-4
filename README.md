@@ -7,8 +7,8 @@ twelve years of hand-copied KGB secrets. MI6 gets him and his family out, and in
 quiet London suburb: Melita Norwood, the grandmother who passed Britain's atomic secrets to Moscow.
 Every claim is sourced in [`docs/research.md`](docs/research.md).
 
-No music. The soundtrack is voice-over plus 978 procedurally synthesised, frame-locked sound effects. Typing
-uses deep "thock" keys, and text appears with soft "cream" pops.
+No music. The soundtrack is voice-over plus frame-locked sound effects: procedurally synthesised effects, and
+real recorded keystrokes for typing (capped at a natural ~11 keys/s). Text appears with soft "cream" pops.
 
 ## How it is made
 
@@ -37,6 +37,7 @@ mkdir -p moscow london && unzip -j -o moscow_shp.zip 'Moscow-shp/shape/*' -d mos
 cd ../..
 .venv/bin/python tools/build_geo.py                 # bake map textures + 3D London mesh -> build/cache
 .venv/bin/python tools/make_sfx.py                  # synthesise the SFX library -> audio/sfx
+# typing samples (committed in audio/keys) are rebuilt from the CC0 pack with tools/make_keys.py
 # (optional) regenerate narration: WITH_TTS=1 .hoplite/setup.sh, then
 #   .venv-tts/bin/python tools/make_vo.py gen && .venv-tts/bin/python tools/make_vo.py pick && .venv-tts/bin/python tools/align_vo.py
 #   (the pick step needs the UTMOS repo: git clone --branch v1.2.0 https://github.com/tarepan/SpeechMOS /tmp/tts/SpeechMOS)
@@ -58,4 +59,5 @@ Review helpers: `python render.py still <t>` renders a single frame, and `python
 
 Fonts: Inter, Instrument Serif, Newsreader, IBM Plex Mono, PT Mono, Bad Script, Caveat, Oswald (SIL OFL).
 Map data © OpenStreetMap contributors (ODbL); Natural Earth (public domain). Voice: Kokoro-82M (Apache-2.0).
+Keystrokes: "Keyboard Soundpack #1" by unicaegames, OpenGameArt (CC0).
 All visuals and sounds are generated from scratch; scenes are illustrative reconstructions.

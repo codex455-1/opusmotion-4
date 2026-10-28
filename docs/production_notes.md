@@ -42,9 +42,9 @@
 ## 4. Sound
 
 - **Voice:** Kokoro `bf_emma` with British G2P. UTMOS per line is 4.32–4.44 (human studio speech typically scores about 4.0–4.4). Chain: high-pass 70 Hz, low-shelf +1.8 dB at 170 Hz for body, −1.2 dB at 320 Hz, +1.6 dB presence at 3.4 kHz, split-band de-esser, 2.6:1 smooth compressor, 6% small "cabin" room.
-- **Keys:** modal "thock" synthesis (body modes at 170–372 Hz, low-passed click, a release stroke 70–110 ms later, desk resonance). Timing is humanised per character with longer gaps after spaces and punctuation, and the same timing drives both the glyph reveal and the sound.
+- **Keys:** real recorded keystrokes (30 presses plus derived spacebar and enter sounds; CC0). Playback is capped at about 11 keys per second (a minimum 74–98 ms gap, jittered), with ±1.5 dB velocity and ±2% pitch variation per stroke. Glyphs still reveal on every character.
 - **Text:** `text_soft` (a velvety puff) on each caption row and `text_pop` (a rounded low pluck) on emphasis words and titles.
-- **Mix:** six SFX buses, sidechain-ducked 5.5 dB under the voice (impacts only 2 dB), a 4×-oversampled look-ahead limiter, −14 LUFS integrated with a −1.2 dBTP ceiling.
+- **Mix:** six SFX buses, each set relative to the voice (keys −14 LU, text −18, ambience −18, whooshes −11, objects −10, impacts −8), then sidechain-ducked 5.5 dB under the voice (impacts only 2 dB), a 4×-oversampled look-ahead limiter, −14 LUFS integrated with a −1.2 dBTP ceiling.
 
 ## 5. Engineering notes and limitations
 
