@@ -1,0 +1,11 @@
+# environments
+.venv/
+.venv-tts/
+__pycache__/
+*.pyc
+# large or regenerable inputs/outputs
+assets/geo/
+build/
+audio/sfx/*.wav
+audio/mix.wav
+.hoplite/
