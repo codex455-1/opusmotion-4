@@ -1,0 +1,18 @@
+[
+ {"id":"s01","scene":"open","text":"May, 1967."},
+ {"id":"s02","scene":"open","text":"A thin jet climbs into the night above Thailand."},
+ {"id":"s03","scene":"open","text":"No markings. No bombs. Just a pilot, a camera, and two long cases in its belly."},
+ {"id":"s04","scene":"cats","text":"The pilot is Chuang. His unit is called the Black Cats."},
+ {"id":"s05","scene":"cats","text":"Made by the CIA and Taiwan, the Black Cats fly the U-2."},
+ {"id":"s06","scene":"cats","text":"A jet with the wings of a glider, near the edge of space."},
+ {"id":"s07","scene":"problem","text":"China is about to test a hydrogen bomb."},
+ {"id":"s08","scene":"problem","text":"Satellites can photograph the desert. But they cannot feel it."},
+ {"id":"s09","scene":"plan","text":"So Chuang will fly three thousand kilometers, cross the bamboo curtain, and drop two listening posts into the sand near Lop Nur."},
+ {"id":"s10","scene":"plan","text":"Each one is two meters long. It lands, and waits."},
+ {"id":"s11","scene":"plan","text":"If the earth moves, it will tell Taipei."},
+ {"id":"s12","scene":"test","text":"On June seventeenth, a bomb called six-three-nine falls from an H-6."},
+ {"id":"s13","scene":"test","text":"Three point three megatons. The sky turns white."},
+ {"id":"s14","scene":"signal","text":"Six weeks later, the sensors answer."},
+ {"id":"s15","scene":"signal","text":"The signal is small. The meaning is not."},
+ {"id":"s16","scene":"coda","text":"The flights end in 1974. The planes go home. The desert keeps the rest."}
+]

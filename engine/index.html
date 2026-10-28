@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: Bodoni; src: url("../assets/fonts/Bodoni.ttf"); font-weight: 400 900; }
+@font-face { font-family: Inter; src: url("../assets/fonts/Inter.ttf"); font-weight: 100 900; }
+@font-face { font-family: PlexMono; src: url("../assets/fonts/IBMPlexMono-Regular.ttf"); font-weight: 400; }
+@font-face { font-family: PlexMono; src: url("../assets/fonts/IBMPlexMono-Medium.ttf"); font-weight: 500; }
+@font-face { font-family: NotoSC; src: url("../assets/fonts/NotoSC.ttf"); font-weight: 200 900; }
+html,body { margin:0; background:#000; overflow:hidden; }
+canvas { display:block; }
+#scene { position:absolute; left:-9999px; top:0; }
+</style>
+</head>
+<body>
+<canvas id="scene" width="1080" height="1920"></canvas>
+<canvas id="out" width="1080" height="1920"></canvas>
+<script src="timeline.js"></script>
+<script src="util.js"></script>
+<script src="post.js"></script>
+<script src="../assets/geo/asia.js"></script>
+<script src="scenes.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

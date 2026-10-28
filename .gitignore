@@ -1,0 +1,13 @@
+.venv/
+node_modules/
+models/
+render/frames/
+render/progress.json
+render/render.log
+analysis/
+audio/out/
+vo/*.wav
+dist/*.mp4
+.hoplite/
+__pycache__/
+*.pyc

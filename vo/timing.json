@@ -1,0 +1,98 @@
+[
+ {
+  "id": "s01",
+  "scene": "open",
+  "text": "May, 1967.",
+  "dur": 2.2186666666666666
+ },
+ {
+  "id": "s02",
+  "scene": "open",
+  "text": "A thin jet climbs into the night above Thailand.",
+  "dur": 2.7946666666666666
+ },
+ {
+  "id": "s03",
+  "scene": "open",
+  "text": "No markings. No bombs. Just a pilot, a camera, and two long cases in its belly.",
+  "dur": 5.802666666666667
+ },
+ {
+  "id": "s04",
+  "scene": "cats",
+  "text": "The pilot is Jwahng. His unit is called the Black Cats.",
+  "dur": 3.584
+ },
+ {
+  "id": "s05",
+  "scene": "cats",
+  "text": "Made by the CIA and Taiwan, the Black Cats fly the U-2.",
+  "dur": 3.989333333333333
+ },
+ {
+  "id": "s06",
+  "scene": "cats",
+  "text": "A jet with the wings of a glider, near the edge of space.",
+  "dur": 3.2213333333333334
+ },
+ {
+  "id": "s07",
+  "scene": "problem",
+  "text": "China is about to test a hydrogen bomb.",
+  "dur": 2.6453333333333333
+ },
+ {
+  "id": "s08",
+  "scene": "problem",
+  "text": "Satellites can photograph the desert. But they cannot feel it.",
+  "dur": 3.7973333333333334
+ },
+ {
+  "id": "s09",
+  "scene": "plan",
+  "text": "So Jwahng will fly three thousand kilometers, cross the bamboo curtain, and drop two listening posts into the sand near Lop Noor.",
+  "dur": 8.234666666666667
+ },
+ {
+  "id": "s10",
+  "scene": "plan",
+  "text": "Each one is two meters long. It lands, and waits.",
+  "dur": 3.032625
+ },
+ {
+  "id": "s11",
+  "scene": "plan",
+  "text": "If the earth moves, it will tell Taipei.",
+  "dur": 2.3466666666666667
+ },
+ {
+  "id": "s12",
+  "scene": "test",
+  "text": "On June seventeenth, a bomb called six-three-nine falls from an H-6.",
+  "dur": 4.586666666666667
+ },
+ {
+  "id": "s13",
+  "scene": "test",
+  "text": "Three point three megatons.",
+  "dur": 1.6213333333333333
+ },
+ {
+  "id": "s14",
+  "scene": "signal",
+  "text": "Six weeks later, the sensors answer.",
+  "dur": 2.32075
+ },
+ {
+  "id": "s15",
+  "scene": "signal",
+  "text": "The signal is small. The meaning is not.",
+  "dur": 2.559041666666667
+ },
+ {
+  "id": "s16",
+  "scene": "coda",
+  "text": "The flights end in 1974. The planes go home. The desert keeps the rest.",
+  "dur": 5.888
+ }
+]
