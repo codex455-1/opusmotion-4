@@ -1,0 +1,13 @@
+numpy
+scipy
+skia-python
+moderngl
+glcontext
+pillow
+soundfile
+shapely
+fonttools
+pyloudnorm
+pyshp
+uharfbuzz
+mapbox-earcut

@@ -8,4 +8,5 @@ assets/geo/
 build/
 audio/sfx/*.wav
 audio/mix.wav
-.hoplite/
+.hoplite/*
+!.hoplite/setup.sh
