@@ -78,11 +78,18 @@ def build_sfx():
             dur = cu.get("dur", info["duration"])
             n = int(dur * SR)
             reps = int(np.ceil(n / len(x))) + 1
-            off = int((hash(cu["name"]) % 997) / 997 * len(x))
+            off = int((sum(map(ord, cu["name"])) * 7919 % 997) / 997 * len(x))  # deterministic loop phase
             y = np.tile(x, (reps, 1))[off:off + n].copy()
             y = X.fade(y, cu.get("fade_in", 0.3), cu.get("fade_out", 0.5))
         else:
             y = x
+            if cat == "key":
+                # neighbouring thock variants correlate (~0.86); a per-keystroke ±4% pitch/speed shift
+                # keeps long typing runs from sounding machine-gunned
+                r = 1.0 + (((int(cu["t"] * 1000) * 2654435761) % 1000) / 1000.0 - 0.5) * 0.08
+                src = np.arange(len(x), dtype=np.float64)
+                dst = np.arange(0, len(x) - 1, r)
+                y = np.stack([np.interp(dst, src, x[:, ch]) for ch in range(x.shape[1])], 1).astype(np.float32)
         t0 = cu["t"]
         if cu.get("align") == "peak" and info.get("peak_time") is not None:
             t0 = cu["at"] - info["peak_time"]
