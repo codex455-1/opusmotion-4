@@ -4,9 +4,12 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 PY=.venv/bin/python
 [ -f build/video.mp4 ] || { echo "render first: $PY render.py all 2"; exit 1; }
-$PY tools/mix_audio.py
+[ "${SKIP_MIX:-0}" = "1" ] && [ -f audio/mix.wav ] || $PY tools/mix_audio.py
 mkdir -p output
-ffmpeg -v error -y -i build/video.mp4 -i audio/mix.wav -map 0:v:0 -map 1:a:0 -c:v copy \
+# delivery encode: grain-preserving x264, capped bitrate for social platforms
+ffmpeg -v error -y -i build/video.mp4 -i audio/mix.wav -map 0:v:0 -map 1:a:0 \
+  -c:v libx264 -preset slow -tune grain -crf 18 -maxrate 24M -bufsize 48M -profile:v high -level 4.2 \
+  -pix_fmt yuv420p -color_primaries bt709 -color_trc bt709 -colorspace bt709 \
   -c:a aac -b:a 320k -ar 48000 -movflags +faststart -shortest \
   -metadata title="The Mitrokhin Archive" -metadata comment="Illustrative reconstruction. Sources in docs/research.md" \
   output/the_mitrokhin_archive.mp4
